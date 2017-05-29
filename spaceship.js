@@ -3,13 +3,13 @@ var Spaceship = function(settings) {
   // Settings
   var spaceshipElement = null;
   var spaceshipRotation = 0;
-  var velocityY = 0;
-  var velocityX = 0;
-  var thrust = 4;
+  var velY = 0;
+  var velX = 0;
+
+  // Thrust velocity
+  var thrust = 0.2;
 
 
-  var velocityY = Math.sin(spaceshipRotation) * thrust;
-  var velocityX = Math.cos(spaceshipRotation) * thrust;
 
 
   /*
@@ -24,6 +24,7 @@ var Spaceship = function(settings) {
   function wall() {
 
     var spaceshipRect = spaceshipElement.getBoundingClientRect();
+
     var w = parseInt(window.innerWidth);
     var h = parseInt(window.innerHeight);
 
@@ -57,9 +58,9 @@ var Spaceship = function(settings) {
 
 
 
-
   // Move the ball around manually
   function move(interactions) {
+
 
     if (interactions.left) {
       spaceshipElement.style.transform = 'rotate(' + (parseInt(spaceshipRotation) - 8) + 'deg)';
@@ -74,16 +75,22 @@ var Spaceship = function(settings) {
     }
 
     if (interactions.space) {
-
-      console.log('spacebar pressed');
+      velY += Math.sin(spaceshipRotation) * thrust;
+      velX += Math.cos(spaceshipRotation) * thrust;
+      console.log(velY);
 
     }
+
 
     if (settings.walls) {
       wall();
     }
   }
 
+  function accelerate(interactions) {
+
+
+  }
 
   function create() {
     // Create the object asset
@@ -100,6 +107,7 @@ var Spaceship = function(settings) {
 
   this.render = function(interactions) {
     move(interactions);
+
   }
 
   init();

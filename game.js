@@ -95,13 +95,14 @@ var Game = function() {
   }
 
   // The render function. It will be called 60/sec
-  function render() {
+  this.render = function() {
 
     for (var i = 0; i < assets.length; i++) {
       assets[i].render(interactions);
     }
   }
 
+var self = this;
   window.requestAnimFrame = (function() {
     return window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
@@ -114,7 +115,7 @@ var Game = function() {
 
   (function animloop() {
     requestAnimFrame(animloop);
-    render();
+    self.render();
   })();
 
   init();
