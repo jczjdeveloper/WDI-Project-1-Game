@@ -3,8 +3,13 @@ var Spaceship = function(settings) {
   // Settings
   var spaceshipElement = null;
   var spaceshipRotation = 0;
-  var thrust = 1;
+  var velocityY = 0;
+  var velocityX = 0;
+  var thrust = 4;
 
+
+  var velocityY = Math.sin(spaceshipRotation) * thrust;
+  var velocityX = Math.cos(spaceshipRotation) * thrust;
 
 
   /*
@@ -66,6 +71,12 @@ var Spaceship = function(settings) {
       spaceshipElement.style.transform = 'rotate(' + (parseInt(spaceshipRotation) + 8) + 'deg)';
       spaceshipRotation = spaceshipRotation + 8;
       console.log(spaceshipRotation);
+    }
+
+    if (interactions.space) {
+
+      console.log('spacebar pressed');
+
     }
 
     if (settings.walls) {
