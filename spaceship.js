@@ -1,13 +1,13 @@
 var Spaceship = function(settings) {
 
-    // Settings
-    var spaceshipElement = null;
-    var bullets = [];
-    var spaceshipRotation = 0;
+  // Settings
+  var spaceshipElement = null;
+  var spaceshipRotation = 0;
+  var thrust = 1;
 
 
 
-    /*
+  /*
     bottom:265
     height:100
     left:400
@@ -16,71 +16,80 @@ var Spaceship = function(settings) {
     width:100
 */
 
-    function wall() {
+  function wall() {
 
-      var spaceshipRect = spaceshipElement.getBoundingClientRect();
-      var w = parseInt(window.innerWidth);
-      var h = parseInt(window.innerHeight);
+    var spaceshipRect = spaceshipElement.getBoundingClientRect();
+    var w = parseInt(window.innerWidth);
+    var h = parseInt(window.innerHeight);
 
-      if(spaceshipRect.bottom > h){
-        spaceshipElement.style.top = (h-spaceshipRect.height) + 'px';
-      }
-
-      if(spaceshipRect.top < 0){
-        spaceshipElement.style.top = '0px';
-      }
-
-      if(spaceshipRect.left < 0){
-          spaceshipElement.style.left = '0px';
-      }
-
-      if(spaceshipRect.right > w){
-          spaceshipElement.style.left = ( w - spaceshipRect.width) + 'px' ;
-      }
-
-
-
-
-
+    if (spaceshipRect.bottom > h) {
+      spaceshipElement.style.top = (h - spaceshipRect.height) + 'px';
     }
 
-    // Move the ball around manually
-    function move(interactions){
+    if (spaceshipRect.top < 0) {
+      spaceshipElement.style.top = '0px';
+    }
 
-      if (interactions.left) {
-        spaceshipElement.style.transform = 'rotate(' + (parseInt(spaceshipRotation) - 8) + 'deg)';
-        spaceshipRotation = spaceshipRotation - 8;
-        console.log(spaceshipRotation);
-      }
+    if (spaceshipRect.left < 0) {
+      spaceshipElement.style.left = '0px';
+    }
 
-      if (interactions.right) {
-        spaceshipElement.style.transform = 'rotate(' + (parseInt(spaceshipRotation) + 8) + 'deg)';
-        spaceshipRotation = spaceshipRotation + 8;
-        console.log(spaceshipRotation);
-      }
-
-      if(settings.walls){
-        wall();
-      }
+    if (spaceshipRect.right > w) {
+      spaceshipElement.style.left = (w - spaceshipRect.width) + 'px';
     }
 
 
-    function create() {
-        // Create the object asset
+
+
+
+  }
+
+  // Convert radians to degrees
+  //
+  // function toDegrees(angle) {
+  //   return spaceshipRotation * (180 / Math.PI);
+  // }
+
+
+
+
+  // Move the ball around manually
+  function move(interactions) {
+
+    if (interactions.left) {
+      spaceshipElement.style.transform = 'rotate(' + (parseInt(spaceshipRotation) - 8) + 'deg)';
+      spaceshipRotation = spaceshipRotation - 8;
+      console.log(spaceshipRotation);
     }
 
-    function init(){
-      // create();
-      spaceshipElement = document.getElementById('spaceship');
-      spaceshipElement.style.top = '400px';
-      spaceshipElement.style.left = '400px';
-      spaceshipElement.style.height = '100px';
-
+    if (interactions.right) {
+      spaceshipElement.style.transform = 'rotate(' + (parseInt(spaceshipRotation) + 8) + 'deg)';
+      spaceshipRotation = spaceshipRotation + 8;
+      console.log(spaceshipRotation);
     }
 
-    this.render = function(interactions){
-      move(interactions);
+    if (settings.walls) {
+      wall();
     }
+  }
 
-    init();
+
+  function create() {
+    // Create the object asset
+  }
+
+  function init() {
+    // create();
+    spaceshipElement = document.getElementById('spaceship');
+    spaceshipElement.style.top = '400px';
+    spaceshipElement.style.left = '400px';
+    spaceshipElement.style.height = '100px';
+
+  }
+
+  this.render = function(interactions) {
+    move(interactions);
+  }
+
+  init();
 }
