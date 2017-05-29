@@ -5,7 +5,6 @@ var Spaceship = function(settings) {
   var spaceshipRotation = 0;
   var velY = 0;
   var velX = 0;
-
   // Thrust velocity
   var thrust = 0.2;
 
@@ -45,20 +44,10 @@ var Spaceship = function(settings) {
     }
 
 
-
-
-
   }
 
-  // Convert radians to degrees
-  //
-  // function toDegrees(angle) {
-  //   return spaceshipRotation * (180 / Math.PI);
-  // }
 
-
-
-  // Move the ball around manually
+  // Move the spaceship around manually
   function move(interactions) {
 
 
@@ -75,9 +64,26 @@ var Spaceship = function(settings) {
     }
 
     if (interactions.space) {
-      velY += Math.sin(spaceshipRotation) * thrust;
-      velX += Math.cos(spaceshipRotation) * thrust;
-      console.log(velY);
+      // convert angle to radians (direction that spaceship is facing)
+      var radians = spaceshipRotation / Math.PI * 180;
+      // current X and Y coord of spaceship
+      function getOffset(spaceship) {
+        spaceship = spaceship.getBoundingClientRect();
+        return {
+          left: spaceship.left + window.scrollX,
+          top: spaceship.top + window.scrollY
+        }
+      }
+      // Change in X and Y coords
+      velY += Math.sin(radians) * thrust;
+      velX += Math.cos(radians) * thrust;
+      // Apply friction factor (deceleration)
+      velY *= 0.9;
+      velX *= 0.9;
+      // New change in coords with friction applied
+      getOffset(spaceship).top -= velY;
+      getOffset(spaceship).left -= velX;
+      console.log('velocityY is ' + velY + 'velocityX is ' + velX);
 
     }
 

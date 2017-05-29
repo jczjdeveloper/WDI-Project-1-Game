@@ -15,8 +15,8 @@ var Game = function() {
 
   // Interactions
   var interactions = {};
-  interactions.up = false; // Up arrow key pressed
-  interactions.down = false; // Down arrow key pressed
+  // interactions.up = false; // Up arrow key pressed
+  // interactions.down = false; // Down arrow key pressed
   interactions.left = false; // Left arrow key pressed
   interactions.right = false; // Right arrow ket pressed
   interactions.space = false; // Space key pressed
@@ -34,12 +34,12 @@ var Game = function() {
         case "ArrowLeft":
           interactions.left = false;
           break;
-        case "ArrowUp":
-          interactions.up = false;
-          break;
-        case "ArrowDown":
-          interactions.down = false;
-          break;
+        // case "ArrowUp":
+        //   interactions.up = false;
+        //   break;
+        // case "ArrowDown":
+        //   interactions.down = false;
+        //   break;
 
         default:
           break;
@@ -63,12 +63,12 @@ var Game = function() {
         case "ArrowLeft":
           interactions.left = true;
           break;
-        case "ArrowUp":
-          interactions.up = true;
-          break;
-        case "ArrowDown":
-          interactions.down = true;
-          break;
+        // case "ArrowUp":
+        //   interactions.up = true;
+        //   break;
+        // case "ArrowDown":
+        //   interactions.down = true;
+        //   break;
         default:
           break;
       }
