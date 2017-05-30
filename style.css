@@ -93,8 +93,8 @@
 }
 
 
-
 /*Media query for star backdrop for homepage and instructions page*/
+
 @keyframes zoom {
   0% {
     opacity: 0;
@@ -114,9 +114,26 @@
 
 
 /*Planetary media query to rotate on own axis*/
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 
 /*IN-GAME ENVIRONMENT*/
 
@@ -157,6 +174,9 @@
   border-radius: 50%;
   top: 60%;
   left: 20%;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0px 0px 30px black;
 }
 
 .earthname {
