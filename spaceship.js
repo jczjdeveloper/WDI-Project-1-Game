@@ -2,7 +2,7 @@ var Spaceship = function(settings) {
 
   // Settings
   var spaceshipElement = null;
-  var spaceshipRotation = 0;
+  var spaceshipRotation = 90;
   var velY = 0;
   var velX = 0;
   // Thrust velocity
