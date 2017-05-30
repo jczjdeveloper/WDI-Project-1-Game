@@ -6,6 +6,7 @@ var Game = function() {
   settings.walls = true; // The ball can not go outside the screen
   settings.automatic = false; // The ball will move by itself
   settings.godmode = false; // Debug mode
+  settings.time = 60;
 
   // World settings
   var assets = []; // All game objects
@@ -17,6 +18,8 @@ var Game = function() {
   var interactions = {};
   // interactions.up = false; // Up arrow key pressed
   // interactions.down = false; // Down arrow key pressed
+  interactions.up = false;              // Up arrow key pressed
+  interactions.down = false;            // Down arrow key pressed
   interactions.left = false; // Left arrow key pressed
   interactions.right = false; // Right arrow ket pressed
   interactions.space = false; // Space key pressed
@@ -24,61 +27,98 @@ var Game = function() {
   // Setup event listeners
   function setupEvents() {
 
+
+
+// SPACESHIP EVENT listeners
     document.addEventListener('keyup', function(event) {
       var keyName = event.key;
-      var keyCode = event.code;
-      switch (keyName) {
-        case "ArrowRight":
-          interactions.right = false;
-          break;
-        case "ArrowLeft":
-          interactions.left = false;
-          break;
-        // case "ArrowUp":
-        //   interactions.up = false;
-        //   break;
-        // case "ArrowDown":
-        //   interactions.down = false;
-        //   break;
 
+      switch(keyName) {
+        case "ArrowRight":
+            interactions.right = false;
+            break;
+        case "ArrowLeft":
+            interactions.left = false;
+            break;
+        case "ArrowUp":
+            interactions.up = false;
+            break;
+        case "ArrowDown":
+            interactions.down = false;
+            break;
         default:
-          break;
+            break;
       }
-      switch (keyCode) {
-        case "Space":
-          interactions.space = false;
-          break;
-        default:
-          break;
-      }
+
+
+
+
+
+      // SPACESHIP
+      // var keyName = event.key;
+      // var keyCode = event.code;
+      // switch (keyName) {
+      //   case "ArrowRight":
+      //     interactions.right = false;
+      //     break;
+      //   case "ArrowLeft":
+      //     interactions.left = false;
+      //     break;
+      //   default:
+      //     break;
+      // }
+      // switch (keyCode) {
+      //   case "Space":
+      //     interactions.space = false;
+      //     break;
+      //   default:
+      //     break;
+      // }
     });
 
     document.addEventListener('keydown', function(event) {
       var keyName = event.key;
-      var keyCode = event.code;
-      switch (keyName) {
+
+      switch(keyName) {
         case "ArrowRight":
-          interactions.right = true;
-          break;
+            interactions.right = true;
+            break;
         case "ArrowLeft":
-          interactions.left = true;
-          break;
-        // case "ArrowUp":
-        //   interactions.up = true;
-        //   break;
-        // case "ArrowDown":
-        //   interactions.down = true;
-        //   break;
+            interactions.left = true;
+            break;
+        case "ArrowUp":
+            interactions.up = true;
+            break;
+        case "ArrowDown":
+            interactions.down = true;
+            break;
         default:
-          break;
+            break;
       }
-      switch (keyCode) {
-        case "Space":
-          interactions.space = true;
-          break;
-        default:
-          break;
-      }
+
+
+
+
+      // SPACESHIP
+      // var keyName = event.key;
+      // var keyCode = event.code;
+      // switch (keyName) {
+      //   case "ArrowRight":
+      //     interactions.right = true;
+      //     break;
+      //   case "ArrowLeft":
+      //     interactions.left = true;
+      //     break;
+      //   default:
+      //     break;
+      // }
+      // switch (keyCode) {
+      //   case "Space":
+      //     interactions.space = true;
+      //     break;
+      //   default:
+      //     break;
+      // }
     });
 
 
@@ -100,7 +140,16 @@ var Game = function() {
     for (var i = 0; i < assets.length; i++) {
       assets[i].render(interactions);
     }
+//     // seconds per frame
+// secondsPassed = frame / 60;
+// // reiteration
+// frame ++;
+// // time passed function
+// // timer(settings.time, seondsPassed);
+
   }
+
+
 
 var self = this;
   window.requestAnimFrame = (function() {
