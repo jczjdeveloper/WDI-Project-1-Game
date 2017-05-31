@@ -4,17 +4,17 @@ var Earth = function(settings) {
   var earthElement = null;
   var oxygen = 100;
   var fuel = 100;
-
-var earthPosition = {};
-
-
-
-
-
-
+  var earthPosition = {};
 
   function create() {
     // Create the object asset
+  }
+
+  this.render = function(interactions){
+  }
+
+  this.getElement = function(){
+    return earthElement;
   }
 
   function init() {

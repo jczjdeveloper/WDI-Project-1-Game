@@ -7,6 +7,11 @@ var Spaceship = function(settings) {
   var shipPosition = {};
 
 
+  this.getElement = function(){
+    return shipElement;
+  }
+
+
   // Interactions to STEER ship
   function turn(interactions) {
 
@@ -102,46 +107,17 @@ var Spaceship = function(settings) {
   //   }
   // };
 
+  this.applyGravity(){
 
-  function shipPlanetCollision() {
-
-    var shipRect = shipElement.getBoundingClientRect();
-    var earth = document.getElementById('earth');
-
-    // CIRCULAR COLLISION DETECTION BETWEEN SPACESHIPS AND OTHER PLANETS.
-
-    var shipCol = {
-      radius: shipRect.width/2,
-      x: shipRect.left + shipRect.width/2,
-      y: shipRect.top - shipRect.width/2
-    };
-    var earthCol = {
-      radius: earth.width/2,
-      x: earth.left + earth.width/2,
-      y: earth.top - earth.width/2
-    };
-
-    // console.log(shipCol.radius, shipCol.x, shipCol.y)
-    var dx = (earthCol.x + earthCol.radius) - (shipCol.x + shipCol.radius);
-    var dy = (earthCol.y + earthCol.radius) - (shipCol.y + shipCol.radius);
-    var distance = Math.sqrt(dx * dx + dy * dy);
-    //console.log(shipRect)
-    //console.log('ship+earth radius',shipCol.radius + earthCol.radius)
-    //console.log('distance from ship to earth',distance)
-    if (distance < shipCol.radius + earthCol.radius) {
-      //console.log('ship', distance, 'earth', shipCol.radius+ earthCol.radius)
-      console.log("Collision with Earth detected!");
-
-    }
-  };
+    
+  }
 
 
   this.render = function(interactions) {
     accelerate(interactions);
     turn(interactions);
     move();
-    shipPlanetCollision();
-    // clipTwoCircles('ship','earth');
+
   }
 
   function toRadians(angle) {
