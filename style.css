@@ -169,6 +169,7 @@
   top:50%;
   left:50%;
   transform-origin: center center;
+  border-radius: 50%;
 }
 
 #earth {
@@ -191,4 +192,17 @@
   -webkit-animation: spin 6s linear infinite;
   -moz-animation: spin 6s linear infinite;
   animation: spin 6s linear infinite;
+}
+
+#asteroids {
+  height: 20px;
+  width: 20px;
+  background-color: gray;
+  position: absolute;
+  border-radius: 50%;
+  top: 40%;
+  left: 40%;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0px 0px 30px black;
 }

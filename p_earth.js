@@ -5,7 +5,7 @@ var Earth = function(settings) {
   var oxygen = 100;
   var fuel = 100;
 
-
+var earthPosition = {};
 
 
 
@@ -20,16 +20,15 @@ var Earth = function(settings) {
   function init() {
     // create();
     earthElement = document.getElementById('earth');
-    earthElement.style.top = '200px';
-    earthElement.style.left = '200px';
-    earthElement.style.height = '300px';
+
+    var earthElementRect = earth.getBoundingClientRect();
+    earthPosition = {
+      y: earthElementRect.top,
+      x: earthElementRect.left
+    }
 
   }
 
-  // this.render = function(interactions) {
-  //   move(interactions);
-  //
-  // }
 
   init();
 }

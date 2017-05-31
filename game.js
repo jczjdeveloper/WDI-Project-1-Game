@@ -16,13 +16,10 @@ var Game = function() {
 
     // Interactions
     var interactions = {};
-    // // interactions.up = false;              // Up arrow key pressed
-    // interactions.down = false;            // Down arrow key pressed
     interactions.left = false;            // Left arrow key pressed
-    interactions.right = false;           // Right arrow ket pressed
+    interactions.right = false;           // Right arrow key pressed
     interactions.space = false;           // Space key pressed
     interactions.accelerate = false;      // a key pressed
-    interactions.break = false;           // z key pressed
 
     // Setup event listeners
     function setupEvents() {
@@ -37,17 +34,8 @@ var Game = function() {
           case "ArrowLeft":
               interactions.left = false;
               break;
-          // case "ArrowUp":
-          //     interactions.up = false;
-          //     break;
-          // case "ArrowDown":
-          //     interactions.down = false;
-          //     break;
           case "a":
               interactions.accelerate = false;
-              break;
-          case "z":
-              interactions.break = false;
               break;
           default:
               break;
@@ -64,18 +52,9 @@ var Game = function() {
           case "ArrowLeft":
               interactions.left = true;
               break;
-          // case "ArrowUp":
-          //     interactions.up = true;
-          //     break;
-          // case "ArrowDown":
-          //     interactions.down = true;
-          //     break;
           case "a":
               interactions.accelerate = true;
-              console.log('pressed');
-              break;
-          case "z":
-              interactions.break = true;
+              console.log('accelerating');
               break;
           default:
               break;
