@@ -1,5 +1,9 @@
 var Asteroids = function(settings) {
 
+// Asteroids general settings
+var asteroidsElement = null;
+
+var asteroidsPosition = {};
 
 
   function create() {

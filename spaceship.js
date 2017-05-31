@@ -50,10 +50,6 @@ var Spaceship = function(settings) {
       speed += settings.acceleration;
     }
 
-    // if(interactions.break){
-    //   speed -= settings.acceleration;
-    // }
-
     // Friction factor
     if (speed > settings.maxspeed) {
       speed = settings.maxspeed;
