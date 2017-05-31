@@ -10,7 +10,7 @@ var Game = function() {
 
     // World settings
     var assets = [];                      // All game objects
-    var player = new Spaceship(settings);      // The player
+    var player = new Spaceship (settings);      // The player
     var frame = 0;                        // Frames since the start of the game
 
     // Interactions
@@ -18,12 +18,13 @@ var Game = function() {
     interactions.left = false;            // Left arrow key pressed
     interactions.right = false;           // Right arrow key pressed
     interactions.space = false;           // Space key pressed
-    interactions.accelerate = false;      // a key pressed
+    interactions.accelerate = false;      // 'a' key pressed
 
     // Setup Assets
     function setupAssets(){
 
       assets.push(new Earth());
+      assets.push(new Asteroids());
 
     }
 
@@ -103,7 +104,7 @@ var Game = function() {
 
           if(distance < planetElementRect.width){
 
-            // apply 
+            // apply
 
           }
 
@@ -113,6 +114,8 @@ var Game = function() {
           }
       }
     }
+
+
 
 
     // Startup the game

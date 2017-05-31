@@ -2,8 +2,7 @@ var Earth = function(settings) {
 
   // Settings
   var earthElement = null;
-  var oxygen = 100;
-  var fuel = 100;
+
   var earthPosition = {};
 
   function create() {

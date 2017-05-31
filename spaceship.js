@@ -81,21 +81,21 @@ var Spaceship = function(settings) {
 
   // GRAVITY variables
 
-  var earthElement = document.getElementById('earth');
-
-  var earthPosition = {};
-
-  var earthElementRect = earth.getBoundingClientRect();
-  earthPosition = {
-    y: earthElementRect.top,
-    x: earthElementRect.left
-  }
-
-  // GRAVITY - finding distance between ship and planet
-  var diffX = earthPosition.x - shipPosition.x;
-  var diffY = earthPosition.y - shipPosition.y;
-  var distSquare = (diffX * diffX) + (diffY * diffY);
-  var dist = Math.sqrt(distSquare);
+  // var earthElement = document.getElementById('earth');
+  //
+  // var earthPosition = {};
+  //
+  // var earthElementRect = earth.getBoundingClientRect();
+  // earthPosition = {
+  //   y: earthElementRect.top,
+  //   x: earthElementRect.left
+  // }
+  //
+  // // GRAVITY - finding distance between ship and planet
+  // var diffX = earthPosition.x - shipPosition.x;
+  // var diffY = earthPosition.y - shipPosition.y;
+  // var distSquare = (diffX * diffX) + (diffY * diffY);
+  // var dist = Math.sqrt(distSquare);
 
   // Apply GRAVITY to ship if planet is not in collision with ship
 
@@ -107,9 +107,37 @@ var Spaceship = function(settings) {
   //   }
   // };
 
-  this.applyGravity(){
+  // this.applyGravity(){
+  //
+  //
+  // }
 
-    
+  function wall() {
+
+    var shipRect = ballElement.getBoundingClientRect();
+    var w = parseInt(window.innerWidth);
+    var h = parseInt(window.innerHeight);
+
+    if(ballRect.bottom > h){
+      ballElement.style.top = (h-ballRect.height) + 'px';
+    }
+
+    if(ballRect.top < 0){
+      ballElement.style.top = '0px';
+    }
+
+    if(ballRect.left < 0){
+        ballElement.style.left = '0px';
+    }
+
+    if(ballRect.right > w){
+        ballElement.style.left = ( w - ballRect.width) + 'px' ;
+    }
+
+
+
+
+
   }
 
 
@@ -117,6 +145,7 @@ var Spaceship = function(settings) {
     accelerate(interactions);
     turn(interactions);
     move();
+    wall();
 
   }
 
