@@ -7,6 +7,7 @@ var Game = function() {
     settings.acceleration = 0.3;          // Acceleration per frame
     settings.maxspeed = 5;                 // Max speed of the Spaceship
     settings.turnspeed = 4;                // How fast will the Spaceship turn
+    
 
     // World settings
     var assets = [];                      // All game objects

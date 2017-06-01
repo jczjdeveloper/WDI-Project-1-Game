@@ -114,28 +114,25 @@ var Spaceship = function(settings) {
 
   function wall() {
 
-    var shipRect = ballElement.getBoundingClientRect();
+    var shipRect = shipElement.getBoundingClientRect();
     var w = parseInt(window.innerWidth);
     var h = parseInt(window.innerHeight);
 
-    if(ballRect.bottom > h){
-      ballElement.style.top = (h-ballRect.height) + 'px';
+    if(shipRect.bottom > h){
+      shipElement.style.top = (h-shipRect.height) + 'px';
     }
 
-    if(ballRect.top < 0){
-      ballElement.style.top = '0px';
+    if(shipRect.top < 0){
+      shipElement.style.top = '0px';
     }
 
-    if(ballRect.left < 0){
-        ballElement.style.left = '0px';
+    if(shipRect.left < 0){
+        shipElement.style.left = '0px';
     }
 
-    if(ballRect.right > w){
-        ballElement.style.left = ( w - ballRect.width) + 'px' ;
+    if(shipRect.right > w){
+        shipElement.style.left = ( w - shipRect.width) + 'px' ;
     }
-
-
-
 
 
   }
@@ -161,8 +158,8 @@ var Spaceship = function(settings) {
       y: shipElementRect.top,
       x: shipElementRect.left
     }
-    console.log(shipPosition.y);
-    console.log(shipPosition.x);
+    // console.log(shipPosition.y);
+    // console.log(shipPosition.x);
     shipElement.style.transform = 'rotate(' + angle + 'deg)';
   }
 
