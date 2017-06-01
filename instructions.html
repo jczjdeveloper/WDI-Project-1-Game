@@ -2,12 +2,10 @@
 <html>
 
 <head>
-  <title>BEYOND TERRA</title>
+  <title>HOMEBOUND</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="application.js"></script>
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Bootstrap core CSS -->
   <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
@@ -20,39 +18,22 @@
 
 <body>
 
-  <div class="instructionsbackground">
+  <div class="instructionscontent">
+    <h1 class="instructionsheader">INSTRUCTIONS</h1>
+    <p>Use left and right arrow keys to point the Voyager in desired direction.</p>
+    <p>Press 'a' to engage thrusters to move the Voyager.</p>
+    <p>Reach Earth even if it means crashlanding!</p>
+    <h3 class="cautionheader">CAUTION!</h3>
+    <p>AVOID ASTEROIDS!</p>
+    <p><a class="btn btn-primary btn-lg" href="start.html" role="button" id="onwardbtn">ONWARD, THE JOURNEY AWAITS!</a></p>
+    <p><a class="btn btn-primary btn-lg" href="homepage.html" role="button" id="backbtn">BACK</a></p>
+  </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="instructions">
-            <h1 class="instructionsheader">INSTRUCTIONS</h1>
-            <p>Use left and right arrow keys to point the Voyager in desired direction.</p>
-            <p>Press 'a' to engage thrusters to move the Voyager.</p>
-            <p>Reach Earth even if it means crashlanding!</p>
-            <h3 class="cautionheader">CAUTION!</h3>
-            <p>AVOID ASTEROIDS!</p>
-            <p><a class="btn btn-primary btn-lg" href="start.html" role="button" id="onwardtoedenbtn">ONWARD, THE JOURNEY AWAITS!</a></p>
-            <p><a class="btn btn-primary btn-lg" href="homepage.html" role="button" id="backbtn">BACK</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <div id="space">
-      <div class="stars"></div>
-      <div class="stars"></div>
-      <div class="stars"></div>
-      <div class="stars"></div>
-      <div class="stars"></div>
-    </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</div>
-  </body>
+</body>
 
 </html>

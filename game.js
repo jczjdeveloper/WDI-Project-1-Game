@@ -1,7 +1,7 @@
 var Game = function() {
 
 
-// GAMAE MUSIC
+// GAME MUSIC
   // var audio = new Audio('Dark Ambience Loop.mp3');
   // audio.play();
 
@@ -31,7 +31,7 @@ var Game = function() {
   function setupAssets() {
 
     assets.push(new Earth());
-    for (var i=0; i < 15; i++) {
+    for (var i=0; i < 20; i++) {
       console.log('create asteroid')
         assets.push(new Asteroids());
     }

@@ -1,127 +1,46 @@
-/*NON IN-GAME (HOMEPAGE AND INSTRUCTIONS)*/
 
-.homepagecontent, .instructions {
+/*GENERAL SETTINGS FOR BLACK BACKGROUND (homepage, instructions)*/
+
+html, body {
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.homepagecontent, .instructionscontent {
+  background-image: url("planetbackground.jpg");
+  background-position: center;
+  background-size: cover;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  color: white;
+  margin: auto;
+  padding-top: 200px;
   z-index: 1;
 }
 
-.homepagetitle  {
-  color: white;
-  font-size: 40px;
+#instructionsbtn, #startbtn, #onwardbtn, #backbtn {
   z-index: 1;
+  background-color: darkgray;
+  border-color: darkgray;
+}
+
+.homepagetitle {
+  text-decoration-style: solid;
   text-decoration: underline;
-  text-decoration-style:solid;
   font-weight: bold;
 }
 
 .homepagecaption {
-  color: white;
-  font-size: 20px;
-  z-index: 1;
-  text-decoration-style: double;
   font-style: italic;
-  font-weight: bold;
-
-}
-.homepagebackground, .instructionsbackground,.startpagebackground  {
-  background-color: black;
-  background-size: contain;
-  background-position: center;
-  position: relative;
-}
-
-.socialmediaicons {
-  color: white;
-  padding: 40px 10px 0px 10px;
-  display: inline;
-  text-align: center;
-  font-size: 20px;
-  z-index: 1;
-}
-
-.instructions {
-  color: white;
-  font-size: 20px;
-  z-index: 1;
 }
 
 .instructionsheader, .cautionheader {
+  text-decoration-style: solid;
   text-decoration: underline;
-  font-size: 40px;
 }
-
-#startbtn, #instructionsbtn {
-  z-index: 1;
-}
-
-
-/* Stars for homepage and instructions backdrop
-------------------------------------- */
-
-#space, .stars {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.stars {
-  background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: zoom 5s infinite;
-  opacity: 0;
-}
-
-.stars:nth-child(1) {
-  background-position: 50% 50%;
-  animation-delay: 0s;
-}
-
-.stars:nth-child(2) {
-  background-position: 20% 60%;
-  animation-delay: 1s;
-}
-
-.stars:nth-child(3) {
-  background-position: -20% -30%;
-  animation-delay: 2s;
-}
-
-.stars:nth-child(4) {
-  background-position: 40% -80%;
-  animation-delay: 3s;
-}
-
-.stars:nth-child(5) {
-  background-position: -20% 30%;
-  animation-delay: 4s;
-}
-
-
-/*Media query for star backdrop for homepage and instructions page*/
-
-@keyframes zoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-    animation-timing-function: ease-in;
-  }
-  85% {
-    opacity: 1;
-    transform: scale(2.8);
-    animation-timing-function: linear;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3.5);
-  }
-}
-
 
 /*Planetary media query to rotate on own axis*/
 
@@ -143,17 +62,6 @@
     transform: rotate(360deg);
   }
 }
-
-
-/*IN-GAME ENVIRONMENT*/
-
-.galaxy {
-  background: black;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 
 /*SPACESHIP OBJECT*/
 
@@ -178,8 +86,8 @@
   background-color: green;
   position: absolute;
   border-radius: 50%;
-  top: 500px;
-  left: 200px;
+  top: 70%;
+  left: 100px;
   -moz-box-shadow: 0 0 20px lightblue;
   -webkit-box-shadow: 0 0 20px lightblue;
   box-shadow: 0px 0px 30px lightblue;
@@ -238,4 +146,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100%;
+  max-height: 100%;
 }
