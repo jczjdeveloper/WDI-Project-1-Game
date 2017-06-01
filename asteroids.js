@@ -20,8 +20,8 @@ var Asteroids = function(settings) {
       asteroidsElement = document.createElement("div");
       asteroidsElement.className = "astNew";
       // Asteroid random spawned position
-      asteroidsElement.style.top = parseInt(1000 * Math.random()) + "px";
-      asteroidsElement.style.left = parseInt(1000 * Math.random()) + "px";
+      asteroidsElement.style.top = parseInt(900 * Math.random()) + "px";
+      asteroidsElement.style.left = parseInt(900 * Math.random()) + "px";
       // Asteroid random angle
       asteroidsElement.style.transform = 'rotate(' + (parseInt(Math.random() * 100)) + 'deg)';
 
