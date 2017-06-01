@@ -27,7 +27,5 @@ var Earth = function(settings) {
     }
 
   }
-
-
   init();
 }

@@ -139,7 +139,6 @@ var Spaceship = function(settings) {
 
   }
 
-
   this.render = function(interactions) {
     accelerate(interactions);
     turn(interactions);

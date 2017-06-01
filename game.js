@@ -1,8 +1,14 @@
 var Game = function() {
 
+
+// GAMAE MUSIC
+  // var audio = new Audio('Dark Ambience Loop.mp3');
+  // audio.play();
+
   // Game settings
   var settings = {}; // Containes all game settings
-  settings.walls = false; // The spaceship can not go outside the screen
+  settings.walls = true; // The spaceship can not go outside the screen
+  settings.astWall = true;
   settings.automatic = false; // The spaceship will move by itself
   settings.acceleration = 0.3; // Acceleration per frame
   settings.maxspeed = 5; // Max speed of the Spaceship
@@ -25,8 +31,10 @@ var Game = function() {
   function setupAssets() {
 
     assets.push(new Earth());
-    assets.push(new Asteroids());
-
+    for (var i=0; i < 15; i++) {
+      console.log('create asteroid')
+        assets.push(new Asteroids());
+    }
   }
 
   // Setup event listeners
@@ -117,11 +125,10 @@ var Game = function() {
       }
 
       if (distance < playerBoundingCircle.radius + planetBoundingCircle.radius) {
-        console.log("collision with Earth detected");
+        console.log("YOU WIN! YOU MADE IT BACK TO EARTH!");
       }
     }
   }
-
 
   function collisionDetectionAst() {
 
@@ -165,12 +172,14 @@ var Game = function() {
 
     player.render(interactions);
 
+
     for (var i = 0; i < assets.length; i++) {
       assets[i].render(interactions);
     }
 
     collisionDetectionEarth();
     collisionDetectionAst();
+    frame++;
   }
 
   var self = this; // Add this line

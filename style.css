@@ -2,7 +2,6 @@
 
 .homepagecontent, .instructions {
   text-align: center;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
@@ -14,22 +13,12 @@
   z-index: 1;
 }
 
-.homepagebackground, .instructionsbackground, .startpagebackground {
+.homepagebackground, .instructionsbackground,.startpagebackground  {
   background-color: black;
   background-size: auto;
   background-position: center;
-  min-width: 100%;
-  min-height: 100%;
   position: relative;
 }
-
-/*Set environment size*/
-.body {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-}
-
 
 .socialmediaicons {
   color: white;
@@ -151,8 +140,6 @@
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 
@@ -168,8 +155,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top:5%;
-  left:95%;
+  top:10%;
+  left:90%;
   transform-origin: center center;
   border-radius: 50%;
   z-index: 1;
@@ -179,10 +166,10 @@
   height: 200px;
   width: 200px;
   background-color: green;
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
-  top: 70%;
-  left: 10%;
+  top: 500px;
+  left: 200px;
   -moz-box-shadow: 0 0 20px black;
   -webkit-box-shadow: 0 0 20px black;
   box-shadow: 0px 0px 30px black;
@@ -202,7 +189,6 @@
   height: 20px;
   width: 20px;
   background-color: gray;
-  position: fixed;
   border-radius: 50%;
   top: 40%;
   left: 40%;
@@ -211,21 +197,21 @@
   box-shadow: 0px 0px 30px black;
 }
 
-.asteroidsname {
+/*.asteroidsname {
   text-align: center;
   position: absolute;
   color: white;
   -webkit-animation: spin 6s linear infinite;
   -moz-animation: spin 6s linear infinite;
   animation: spin 6s linear infinite;
-}
+}*/
 
 .astNew {
-  position: relative;
   width: 20px;
   height: 20px;
   background-color: lightgray;
   border-radius: 50%;
+  position: relative;
   -moz-box-shadow: 0 0 20px black;
   -webkit-box-shadow: 0 0 20px black;
   box-shadow: 0px 0px 30px black;
