@@ -4,6 +4,8 @@ var Asteroids = function(settings) {
   var asteroidsElement = null;
   var asteroidsCreated = false;
   var asteroidsPosition = {};
+  var astAngle = 100 * Math.random() + "deg";
+  var astSpeed = 2;
 
   // SPAWN asteroids
   var spawnedAsteroids = [];
@@ -14,34 +16,29 @@ var Asteroids = function(settings) {
 
   function createAsteroid() {
     var space = document.getElementsByClassName('startpagebackground')[0]
-    var astAngle = 100 * Math.random() + "deg";
-    var astSpeed = 2;
+    asteroidsElement = document.createElement("div");
+    asteroidsElement.className = "astNew";
+    // Asteroid random spawned position
+    asteroidsElement.style.top = parseInt(1000 * Math.random()) + "px";
+    asteroidsElement.style.left = parseInt(1000 * Math.random()) + "px";
+    // Asteroid random angle
+    asteroidsElement.style.transform = 'rotate(' + (parseInt(Math.random() * 100)) + 'deg)';
 
-    if (asteroidsCreated === false) {
-      for (var i = 0; i <= 15; i++) {
-        var asteroidsElm = document.createElement("div");
-        asteroidsElm.className = "astNew";
-        // Asteroid random spawned position
-        asteroidsElm.style.top = parseInt(1000 * Math.random()) + "px";
-        asteroidsElm.style.left = parseInt(1000 * Math.random()) + "px";
-        // Asteroid random angle
-        asteroidsElm.style.transform = 'rotate(' + (parseInt(Math.random() * 100)) + 'deg)';
-        // Asteroid movement based on random angle
-        asteroidsElm.top += Math.cos(toRadians(astAngle)) * astSpeed;
-        asteroidsElm.left += Math.sin(toRadians(astAngle)) * astSpeed;
-
-        // Append new asteroid div to Body
-        document.body.appendChild(asteroidsElm)
-      }
-      asteroidsCreated = true
-    }
-    // spawnedAsteroids.push(createAsteroid());
+    // Append new asteroid div to Body
+    document.body.appendChild(asteroidsElement)
   }
+
 
   function toRadians(angle) {
     return angle * (Math.PI / 180);
   }
 
+
+  function move() {
+    // Asteroid movement based on random angle
+    asteroidsElement.style.top = parseInt(asteroidsElement.style.top) + Math.cos(toRadians(parseInt(astAngle))) * astSpeed + "px";
+    asteroidsElement.style.left = parseInt(asteroidsElement.style.left) + Math.sin(toRadians(parseInt(astAngle))) * astSpeed + "px";
+  }
 
   // function createAsteroid() {
   //     for (var i = 0; i <= 30; i++) {
@@ -65,18 +62,11 @@ var Asteroids = function(settings) {
   }
 
   this.render = function(interactions) {
-    createAsteroid();
+    move();
   }
 
   function init() {
-    // create();
-    asteroidsElement = document.getElementById('asteroids');
-
-    var asteroidsElementRect = asteroids.getBoundingClientRect();
-    asteroidsPosition = {
-      y: asteroidsElementRect.top,
-      x: asteroidsElementRect.left
-    }
+    createAsteroid();
   }
 
   // this.render = function(interactions) {
