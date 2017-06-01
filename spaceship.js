@@ -77,7 +77,9 @@ var Spaceship = function(settings) {
 
     // Set angle
     shipElement.style.transform = 'rotate(' + (angle + 90) + 'deg)';
+
   }
+
 
   // GRAVITY variables
 
