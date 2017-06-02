@@ -20,14 +20,20 @@ var Asteroids = function(settings) {
       asteroidsElement = document.createElement("div");
       asteroidsElement.className = "astNew";
       // Asteroid random spawned position
-      asteroidsElement.style.top = parseInt(300 * Math.random()) + "px";
-      asteroidsElement.style.left = parseInt(1000 * Math.random()) + "px";
+      asteroidsElement.style.top = parseInt(300 * Math.random(500)) + "px";
+      asteroidsElement.style.left = parseInt(1000 * Math.random(500)) + "px";
       // Asteroid random angle
       asteroidsElement.style.transform = 'rotate(' + (parseInt(Math.random() * 100)) + 'deg)';
 
       // Append new asteroid div to Body
-      document.body.appendChild(asteroidsElement)
+      space.appendChild(asteroidsElement)
     }
+
+    // function getRandomInt(min, max) {
+    //   min = Math.ceil(min);
+    //   max = Math.floor(max);
+    //   return Math.floor(Math.random() * (max - min)) + min;
+    // }
 
   function toRadians(angle) {
     return angle * (Math.PI / 180);
@@ -73,7 +79,7 @@ var Asteroids = function(settings) {
     // Asteroid movement based on random angle
     asteroidsElement.style.top = parseInt(asteroidsElement.style.top) + Math.cos(toRadians(parseInt(astAngle))) * astSpeed + "px";
     asteroidsElement.style.left = parseInt(asteroidsElement.style.left) + Math.sin(toRadians(parseInt(astAngle))) * astSpeed + "px";
-    astWall();
+  astWall();
   }
 
   // function createAsteroid() {
@@ -122,6 +128,7 @@ var Asteroids = function(settings) {
 
   this.render = function(interactions) {
     move();
+
   }
 
   function init() {

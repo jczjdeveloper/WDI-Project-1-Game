@@ -1,13 +1,14 @@
 
 /*GENERAL SETTINGS FOR BLACK BACKGROUND (homepage, instructions)*/
 
-html, body {
+html body {
   background-color: black;
   background-position: center;
   background-size: cover;
   z-index: 1;
-  min-height: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .homepagecontent, .instructionscontent {
@@ -18,7 +19,8 @@ html, body {
   color: white;
   margin: auto;
   padding-top: 200px;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 
 #instructionsbtn, #startbtn, #onwardbtn, #backbtn {
@@ -107,18 +109,6 @@ html, body {
   animation: spin 20s linear infinite;
 }
 
-/*ASTEROIDS OBJECT*/
-#asteroids {
-  height: 20px;
-  width: 20px;
-  background-color: gray;
-  border-radius: 50%;
-  top: 40%;
-  left: 40%;
-  -moz-box-shadow: 0 0 20px white;
-  -webkit-box-shadow: 0 0 20px white;
-  box-shadow: 0px 0px 30px white;
-}
 
 /*.asteroidsname {
   text-align: center;
@@ -134,7 +124,7 @@ html, body {
   height: 20px;
   background-color: lightgray;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   -moz-box-shadow: 0 0 20px white;
   -webkit-box-shadow: 0 0 20px white;
   box-shadow: 0px 0px 30px white;
@@ -146,6 +136,6 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100%;
-  max-height: 100%;
+  height: 100%;
+  width: 100%;
 }

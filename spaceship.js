@@ -117,8 +117,11 @@ var Spaceship = function(settings) {
   function wall() {
 
     var shipRect = shipElement.getBoundingClientRect();
-    var w = parseInt(window.innerWidth);
-    var h = parseInt(window.innerHeight);
+    // var w = parseInt(window.innerWidth);
+    // var h = parseInt(window.innerHeight);
+    var w = 1000;
+    var h = 1000;
+
 
     if(shipRect.bottom > h){
       shipElement.style.top = (h-shipRect.height) + 'px';
