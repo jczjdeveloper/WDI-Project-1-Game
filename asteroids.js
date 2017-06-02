@@ -5,7 +5,7 @@ var Asteroids = function(settings) {
   var asteroidsCreated = false;
   var asteroidsPosition = {};
   var astAngle = 100 * Math.random() + "deg";
-  var astSpeed = 5;
+  var astSpeed = 2;
 
   // SPAWN asteroids
   var spawnedAsteroids = [];
@@ -61,17 +61,18 @@ var Asteroids = function(settings) {
       asteroidsElement.style.left = (w - asRect.width) + 'px';
     }
 
+    // BOUNCE CHECK
     // if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     //     astSpeed = -2;
-      if (asteroidsElement.style.top > window.innerHeight) {
+    if (asRect.top > window.innerHeight || asRect.top < 0) {
       asteroidsElement.style.top = parseInt(asteroidsElement.style.top) + Math.cos(toRadians(parseInt(astAngle - 180))) * (astSpeed) + "px";
     }
     //   // }
     //   // if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
     //   //     astSpeed = -2;
-      if (asteroidsElement.style.left < window.innerWidth) {
+    if (asRect.left < window.innerWidth || asRect.left) {
       asteroidsElement.style.left = parseInt(asteroidsElement.style.left) + Math.sin(toRadians(parseInt(astAngle - 180))) * (astSpeed) + "px";
-      }
+    }
     // }
   }
 
