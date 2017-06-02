@@ -119,8 +119,8 @@ var Spaceship = function(settings) {
     var shipRect = shipElement.getBoundingClientRect();
     // var w = parseInt(window.innerWidth);
     // var h = parseInt(window.innerHeight);
-    var w = 1000;
-    var h = 1000;
+    var w = parseInt(window.innerWidth);
+    var h = parseInt(window.innerHeight);
 
 
     if(shipRect.bottom > h){

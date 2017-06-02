@@ -2,8 +2,8 @@ var Game = function() {
 
 
 // GAME MUSIC
-  // var audio = new Audio('Dark Ambience Loop.mp3');
-  // audio.play();
+  var audio = new Audio('Dark Ambience Loop.mp3');
+  audio.play();
 
   // Game settings
   var settings = {}; // Containes all game settings
@@ -125,7 +125,8 @@ var Game = function() {
       }
 
       if (distance < playerBoundingCircle.radius + planetBoundingCircle.radius) {
-        console.log("YOU WIN! YOU MADE IT BACK TO EARTH!");
+        alert("YOU WIN! YOU MADE IT BACK TO EARTH!");
+        document.location.reload();
       }
     }
   }
