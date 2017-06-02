@@ -2,7 +2,7 @@ var Game = function() {
 
 
 // GAME MUSIC
-  var audio = new Audio('Dark Ambience Loop.mp3');
+  var audio = new Audio('Dark_Ambience_Loop.mp3');
   audio.play();
 
   // Game settings
